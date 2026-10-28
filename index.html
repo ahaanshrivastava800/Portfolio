@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#04070d">
+  <meta name="description" content="Ahaan Shrivastava — Community Architect, Dealmaker, Builder. A Deepwoken-themed personal portfolio.">
+  <title>Ahaan Shrivastava — Portfolio</title>
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body>
+
+  <!-- Skip-to-content link (accessibility) -->
+  <a href="#layer-1" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════
+       ATMOSPHERIC LAYERS
+  ═══════════════════════════════════════════ -->
+
+  <!-- Particle canvas — full viewport fixed background -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Fog overlays -->
+  <div class="fog-layer fog-1" aria-hidden="true"></div>
+  <div class="fog-layer fog-2" aria-hidden="true"></div>
+
+  <!-- Light rays from top -->
+  <div class="light-rays" aria-hidden="true"></div>
+
+  <!-- Vignette -->
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Film grain -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Cursor wisp -->
+  <div id="cursor-wisp" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       DEPTH GAUGE (fixed left side)
+  ═══════════════════════════════════════════ -->
+  <aside id="depth-gauge" aria-label="Depth indicator">
+    <div class="depth-gauge__track">
+      <div class="depth-gauge__fill" id="depth-fill"></div>
+    </div>
+    <div class="depth-gauge__info">
+      <span class="depth-gauge__counter" id="depth-counter">0</span>
+      <span class="depth-gauge__unit">m</span>
+    </div>
+    <span class="depth-gauge__layer" id="layer-name">The Surface</span>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION (fixed top)
+  ═══════════════════════════════════════════ -->
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="#layer-1" class="nav-brand">A.S.</a>
+    <ul class="nav-links">
+      <li><a href="#layer-1">Surface</a></li>
+      <li><a href="#layer-2">Gale</a></li>
+      <li><a href="#talents-section">Talents</a></li>
+      <li><a href="#layer-3">Brokerage</a></li>
+      <li><a href="#layer-4">Forge</a></li>
+      <li><a href="#layer-5">Depths</a></li>
+      <li><a href="#layer-6">Abyss</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT — 6 LAYERS + TALENT ORB
+  ═══════════════════════════════════════════ -->
+  <main>
+
+    <!-- ─── Layer 1: The Surface ─── -->
+    <section id="layer-1" class="layer" data-layer="1" data-depth="0">
+      <div class="layer__title-card">
+        <span class="layer__number">Layer 1</span>
+        <h2 class="layer__name">The Surface</h2>
+      </div>
+      <div class="layer__content container">
+        <div class="hero">
+          <h1 class="hero__greeting" id="hero-greeting">Hi, I'm Ahaan.</h1>
+          <p class="hero__subtitle" id="hero-subtitle">Community Architect · Dealmaker · Builder</p>
+          <div class="hero__bio" id="hero-bio"></div>
+          <div class="hero__stats" id="hero-stats"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Layer 2: The Eternal Gale ─── -->
+    <section id="layer-2" class="layer" data-layer="2" data-depth="200">
+      <div class="layer__title-card">
+        <span class="layer__number">Layer 2</span>
+        <h2 class="layer__name">The Eternal Gale</h2>
+      </div>
+      <div class="layer__content container">
+        <h3 class="section-heading" id="gale-heading"></h3>
+        <p class="section-desc" id="gale-desc"></p>
+        <div class="card-row" id="gale-highlights"></div>
+      </div>
+    </section>
+
+    <!-- ─── Talent Orb Section ─── -->
+    <section id="talents-section" class="layer talents-layer" data-layer="talents" data-depth="350">
+      <div class="layer__title-card">
+        <span class="layer__number">Talents</span>
+        <h2 class="layer__name">Talent Orb</h2>
+      </div>
+      <div class="layer__content container">
+        <p class="section-desc talents__subtitle">Click the orb to reveal your talents</p>
+        <div class="talents__counter" id="talent-counter" aria-live="polite">Talents unlocked: 0 / 17</div>
+
+        <div class="talents__orb-container" id="orb-container">
+          <button class="talents__orb" id="talent-orb" aria-label="Open Talent Orb to reveal skill cards" tabindex="0">
+            <div class="orb__core"></div>
+            <div class="orb__ring orb__ring--1"></div>
+            <div class="orb__ring orb__ring--2"></div>
+            <div class="orb__glow"></div>
+          </button>
+          <div class="orb__shockwave" id="orb-shockwave" aria-hidden="true"></div>
+        </div>
+
+        <div class="talents__card-area" id="card-area" aria-label="Revealed talent cards"></div>
+
+        <div class="talents__controls" id="talent-controls" style="display:none;">
+          <button class="btn btn--glow" id="reopen-orb" aria-label="Re-open orb for more talents">Re-open Orb</button>
+          <button class="btn btn--outline" id="reveal-all" aria-label="Reveal all remaining talents">Reveal All</button>
+        </div>
+
+        <div class="talents__hand" id="talent-hand" aria-label="Selected talents">
+          <h4 class="talents__hand-title">Talent Hand</h4>
+          <div class="talents__hand-cards" id="hand-cards"></div>
+        </div>
+
+        <div class="talents__grid" id="talent-grid" style="display:none;" aria-label="All talents grid"></div>
+      </div>
+    </section>
+
+    <!-- ─── Layer 3: The Brokerage ─── -->
+    <section id="layer-3" class="layer" data-layer="3" data-depth="500">
+      <div class="layer__title-card">
+        <span class="layer__number">Layer 3</span>
+        <h2 class="layer__name">The Brokerage</h2>
+      </div>
+      <div class="layer__content container">
+        <h3 class="section-heading" id="brokerage-heading"></h3>
+        <p class="section-desc" id="brokerage-desc"></p>
+        <div class="card-row" id="brokerage-roles"></div>
+      </div>
+    </section>
+
+    <!-- ─── Layer 4: The Forge ─── -->
+    <section id="layer-4" class="layer" data-layer="4" data-depth="900">
+      <div class="layer__title-card">
+        <span class="layer__number">Layer 4</span>
+        <h2 class="layer__name">The Forge</h2>
+      </div>
+      <div class="layer__content container">
+        <h3 class="section-heading" id="forge-heading"></h3>
+        <p class="section-desc" id="forge-desc"></p>
+        <div class="card-row" id="forge-projects"></div>
+      </div>
+    </section>
+
+    <!-- ─── Layer 5: The Quant Depths ─── -->
+    <section id="layer-5" class="layer" data-layer="5" data-depth="1400">
+      <div class="layer__title-card">
+        <span class="layer__number">Layer 5</span>
+        <h2 class="layer__name">The Quant Depths</h2>
+      </div>
+      <div class="layer__content container">
+        <h3 class="section-heading" id="quant-heading"></h3>
+        <p class="section-desc" id="quant-desc"></p>
+        <div class="card-row" id="quant-areas"></div>
+      </div>
+    </section>
+
+    <!-- ─── Layer 6: The Abyss ─── -->
+    <section id="layer-6" class="layer" data-layer="6" data-depth="2000">
+      <div class="layer__title-card">
+        <span class="layer__number">Layer 6</span>
+        <h2 class="layer__name">The Abyss</h2>
+      </div>
+      <div class="layer__content container">
+        <h3 class="section-heading" id="abyss-heading"></h3>
+        <p class="section-desc" id="abyss-desc"></p>
+
+        <div class="abyss__education" id="abyss-education"></div>
+        <div class="abyss__goals" id="abyss-goals"></div>
+
+        <div class="abyss__contact" id="abyss-contact">
+          <h4 id="contact-heading"></h4>
+          <p id="contact-text"></p>
+          <div class="contact-links" id="contact-links"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>Forged in the Depths · Ahaan Shrivastava · <span id="footer-year"></span></p>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script src="./js/content.js"></script>
+  <script src="./js/particles.js"></script>
+  <script src="./js/orb.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

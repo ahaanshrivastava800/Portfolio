@@ -1,0 +1,286 @@
+/* ============================================================
+   DEEPWOKEN PORTFOLIO — ANIMATIONS.CSS
+   Keyframes, Orb Pulses, Card Flips, Arc Fly-Outs, & Ambient FX
+   ============================================================ */
+
+/* ----- Orb Animations ----- */
+@keyframes orbPulse {
+  0%, 100% {
+    box-shadow: 0 0 50px var(--cyan), 0 0 100px rgba(45, 212, 191, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 75px var(--cyan-glow), 0 0 150px rgba(128, 255, 234, 0.5);
+  }
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes orbSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shockwave ring expansion */
+@keyframes shockwaveBurst {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-width: 4px;
+  }
+  100% {
+    width: 520px;
+    height: 520px;
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+/* ----- Card Fly-Out Animations (Arc trajectories) ----- */
+@keyframes cardFlyLeft {
+  0% {
+    transform: translate(0, 0) scale(0.3) rotate(-15deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-140px, -60px) scale(0.85) rotate(-6deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cardFlyCenter {
+  0% {
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(0, -90px) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cardFlyRight {
+  0% {
+    transform: translate(0, 0) scale(0.3) rotate(15deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(140px, -60px) scale(0.85) rotate(6deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Card Selection Flash */
+@keyframes cardSelectFlash {
+  0% {
+    box-shadow: 0 0 0 0 rgba(128, 255, 234, 0.8), inset 0 0 0 0 rgba(128, 255, 234, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(128, 255, 234, 0.6), inset 0 0 25px rgba(128, 255, 234, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.4), inset 0 0 0 0 transparent;
+  }
+}
+
+/* Card Deal in Grid Mode */
+@keyframes cardDeal {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Hand Card Entry */
+@keyframes handCardEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ----- Atmospheric Layers Animations ----- */
+@keyframes fogDrift1 {
+  0% {
+    transform: translateX(-8%) translateY(0);
+  }
+  50% {
+    transform: translateX(4%) translateY(-15px);
+  }
+  100% {
+    transform: translateX(-8%) translateY(0);
+  }
+}
+
+@keyframes fogDrift2 {
+  0% {
+    transform: translateX(6%) translateY(0);
+  }
+  50% {
+    transform: translateX(-6%) translateY(12px);
+  }
+  100% {
+    transform: translateX(6%) translateY(0);
+  }
+}
+
+@keyframes raySway {
+  0%, 100% {
+    transform: rotate(-1.5deg) scaleY(1);
+    opacity: var(--ray-opacity, 0.15);
+  }
+  50% {
+    transform: rotate(1.5deg) scaleY(1.08);
+    opacity: calc(var(--ray-opacity, 0.15) * 1.25);
+  }
+}
+
+@keyframes grainShift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -3%); }
+  20% { transform: translate(3%, 1%); }
+  30% { transform: translate(-1%, 2%); }
+  40% { transform: translate(2%, -2%); }
+  50% { transform: translate(-3%, 3%); }
+  60% { transform: translate(1%, -1%); }
+  70% { transform: translate(-2%, 2%); }
+  80% { transform: translate(3%, -3%); }
+  90% { transform: translate(-1%, 1%); }
+}
+
+/* Title Card / Section Entrances */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Subtle Shimmer for Dividers */
+@keyframes shimmerLine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ----- Applied Animation Classes ----- */
+.fog-1 {
+  animation: fogDrift1 35s ease-in-out infinite;
+}
+
+.fog-2 {
+  animation: fogDrift2 28s ease-in-out infinite;
+}
+
+.film-grain {
+  animation: grainShift 0.4s steps(6) infinite;
+}
+
+.light-rays {
+  animation: raySway 16s ease-in-out infinite;
+}
+
+.shockwave-active {
+  animation: shockwaveBurst 0.65s cubic-bezier(0.1, 0.8, 0.3, 1) forwards !important;
+}
+
+.card-fly-left {
+  animation: cardFlyLeft 0.75s var(--ease-out-expo) forwards;
+}
+
+.card-fly-center {
+  animation: cardFlyCenter 0.75s var(--ease-out-expo) forwards;
+}
+
+.card-fly-right {
+  animation: cardFlyRight 0.75s var(--ease-out-expo) forwards;
+}
+
+.card-selecting {
+  animation: cardSelectFlash 0.45s ease-out forwards;
+}
+
+.card-dealing {
+  animation: cardDeal 0.45s var(--ease-out-expo) forwards;
+}
+
+.hand-card-enter {
+  animation: handCardEnter 0.35s var(--ease-out-expo) forwards;
+}
+
+/* Stagger card arrivals */
+.card-row > *:nth-child(1) { animation-delay: 0.08s; }
+.card-row > *:nth-child(2) { animation-delay: 0.16s; }
+.card-row > *:nth-child(3) { animation-delay: 0.24s; }
+.card-row > *:nth-child(4) { animation-delay: 0.32s; }
+.card-row > *:nth-child(5) { animation-delay: 0.40s; }
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .shockwave-active,
+  .card-fly-left,
+  .card-fly-center,
+  .card-fly-right,
+  .fog-1,
+  .fog-2,
+  .film-grain,
+  .light-rays {
+    animation: none !important;
+  }
+}
+
