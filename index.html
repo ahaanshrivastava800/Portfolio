@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Ahaan Shrivastava — first-year B.Tech CS &amp; AI student at Newton School of Technology, Pune. Open-source Bash contributions, full-stack web projects, and achievements."
+  />
+  <title>Ahaan Shrivastava — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <h1 id="owner-name">Ahaan Shrivastava</h1>
+        <p id="owner-tagline" class="tagline">
+          First-year B.Tech Student in Computer Science and Artificial Intelligence — Newton School of Technology, Pune
+        </p>
+      </div>
+      <nav aria-label="Primary navigation" class="top-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <noscript>
+      <div class="noscript-notice" role="note">
+        <p>
+          <strong>JavaScript is disabled.</strong> The full interactive portfolio data is rendered via
+          <code>data.js</code> and <code>script.js</code>. You can still access all repositories, pull requests,
+          and certificates directly below:
+        </p>
+        <ul>
+          <li>
+            GitHub Profile:
+            <a href="https://github.com/ahaanshrivastava800">https://github.com/ahaanshrivastava800</a>
+          </li>
+          <li>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/ahaan-shrivastava-48a157422">https://www.linkedin.com/in/ahaan-shrivastava-48a157422</a>
+          </li>
+          <li>
+            Email:
+            <a href="mailto:ahaan.shrivastava800@gmail.com">ahaan.shrivastava800@gmail.com</a>
+          </li>
+          <li>
+            Portfolio Repo:
+            <a href="https://github.com/ahaanshrivastava800/Portfolio">https://github.com/ahaanshrivastava800/Portfolio</a>
+          </li>
+          <li>
+            S-AI-Projects/bash:
+            <a href="https://github.com/S-AI-Projects/bash">https://github.com/S-AI-Projects/bash</a>
+            (Fork:
+            <a href="https://github.com/ahaanshrivastava800/bash">https://github.com/ahaanshrivastava800/bash</a>)
+            — PRs:
+            <a href="https://github.com/S-AI-Projects/bash/pull/61">#61</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/65">#65</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/66">#66</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/67">#67</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/68">#68</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/69">#69</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/71">#71</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/73">#73</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/75">#75</a>,
+            <a href="https://github.com/S-AI-Projects/bash/pull/90">#90</a>
+          </li>
+          <li>
+            GST Flow Demo:
+            <a href="https://github.com/ahaanshrivastava800/gst-flow-demo">Repository</a> |
+            <a href="https://github.com/ahaanshrivastava800/gst-flow-demo/blob/main/docs/project-summary.md">Documentation</a>
+          </li>
+          <li>
+            CloudCode (prototype):
+            <a href="https://github.com/ahaanshrivastava800/CloudCode">Repository</a> |
+            <a href="https://github.com/ahaanshrivastava800/CloudCode/blob/main/ARCHITECTURE.md">Documentation</a>
+          </li>
+          <li>
+            Certificates &amp; Proofs:
+            <a href="https://ahaanshrivastava800.github.io/Portfolio/proof/brain-gold-certificate.pdf">WorldQuant BRAIN Gold (PDF)</a>,
+            <a href="https://ahaanshrivastava800.github.io/Portfolio/proof/hacktoberfest-certificate.pdf">Hacktoberfest 26 (PDF)</a>,
+            <a href="https://ahaanshrivastava800.github.io/Portfolio/proof/omnikon-hackathon-certificate.png">Omnikon Hackathon 2026 (PNG)</a>
+          </li>
+        </ul>
+      </div>
+    </noscript>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p id="about-paragraph"></p>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <div id="skills-container"></div>
+    </section>
+
+    <section id="contributions" aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">S&amp;AI Open-Source Contributions</h2>
+      <p id="contributions-repo" class="section-intro"></p>
+      <div id="contributions-container" class="card-list"></div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div id="projects-container" class="card-list"></div>
+    </section>
+
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education and Achievements</h2>
+      <div id="education-card" class="card"></div>
+      <h3>Achievements</h3>
+      <div id="achievements-container" class="card-list"></div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <ul id="contact-list" class="contact-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p id="footer-text">Ahaan Shrivastava — Newton School of Technology, Pune</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
